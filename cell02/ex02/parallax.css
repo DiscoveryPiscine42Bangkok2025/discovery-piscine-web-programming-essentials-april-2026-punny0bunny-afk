@@ -20,11 +20,11 @@ body, html {
 
 /* Set specific images (Replace URLs with your actual image paths) */
 .img1 {
-    background-image: url('https://placeholder.com');
+    background-image: url('https://cdn.vectorstock.com/i/1000v/47/96/pixel-shark-8-bit-game-asset-vector-38214796.jpg');
 }
 
 .img2 {
-    background-image: url('https://placeholder.com');
+    background-image: url('https://i.pinimg.com/1200x/50/c1/de/50c1de7864a3a427c112dd1e17fc49c4.jpg');
 }
 
 /* Styling the centered messages */
