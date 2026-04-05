@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 01: Explode this balloon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Initial 200x200 red circle */
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.1s ease; /* Smooths the resizing */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="balloon"></div>
+
+    <script>
+        const balloon = document.getElementById('balloon');
+        const colors = ['red', 'green', 'blue'];
+        let colorIndex = 0;
+        let currentSize = 200;
+
+        // Logic for clicking (Grow and Color Forward)
+        balloon.addEventListener('click', () => {
+            currentSize += 10;
+            
+            // Explode logic
+            if (currentSize > 420) {
+                currentSize = 200;
+            }
+
+            // Change color forward: red -> green -> blue -> red
+            colorIndex = (colorIndex + 1) % colors.length;
+            
+            updateBalloon();
+        });
+
+        // Logic for mouse leaving (Shrink and Color Reverse)
+        balloon.addEventListener('mouseleave', () => {
+            // Shrink by 5px, but not below 200px
+            if (currentSize > 200) {
+                currentSize -= 5;
+                
+                // Change color backward: blue -> green -> red -> blue
+                colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+            }
+            
+            updateBalloon();
+        });
+
+        function updateBalloon() {
+            balloon.style.width = currentSize + 'px';
+            balloon.style.height = currentSize + 'px';
+            balloon.style.backgroundColor = colors[colorIndex];
+        }
+    </script>
+</body>
+</html>
