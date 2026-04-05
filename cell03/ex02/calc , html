@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>It's over 9000</title>
+    <style>
+        /* Basic styling to make it usable */
+        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
+        .calc-container { border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        input, select { margin: 5px; padding: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="calc-container">
+        <!-- Left member -->
+        <input type="text" id="left" placeholder="Left value">
+
+        <!-- Operator select -->
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+
+        <!-- Right member -->
+        <input type="text" id="right" placeholder="Right value">
+
+        <!-- Submit button -->
+        <input type="submit" value="Try me!" onclick="calculate()">
+    </div>
+
+    <script>
+        function calculate() {
+            const leftVal = document.getElementById('left').value;
+            const rightVal = document.getElementById('right').value;
+            const op = document.getElementById('operator').value;
+
+            // 1. Check if inputs are positive integers
+            if (!isPositiveInteger(leftVal) || !isPositiveInteger(rightVal)) {
+                alert('Error :(');
+                return;
+            }
+
+            const n1 = parseInt(leftVal);
+            const n2 = parseInt(rightVal);
+            let result;
+
+            // 2. Handle Division/Modulo by zero
+            if ((op === '/' || op === '%') && n2 === 0) {
+                const msg = "It's over 9000!";
+                alert(msg);
+                console.log(msg);
+                return;
+            }
+
+            // 3. Perform calculation
+            switch (op) {
+                case '+': result = n1 + n2; break;
+                case '-': result = n1 - n2; break;
+                case '*': result = n1 * n2; break;
+                case '/': result = n1 / n2; break;
+                case '%': result = n1 % n2; break;
+            }
+
+            // 4. Output result
+            alert(result);
+            console.log(result);
+        }
+
+        // Helper to validate positive integers
+        function isPositiveInteger(str) {
+            const n = Math.floor(Number(str));
+            return n !== Infinity && String(n) === str && n >= 0;
+        }
+
+        // 5. Recurring alert every 30 seconds
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+</body>
+</html>
