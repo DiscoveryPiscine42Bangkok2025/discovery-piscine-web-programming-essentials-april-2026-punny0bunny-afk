@@ -1,0 +1,88 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.page-title {
+    text-align: center;
+    color: #333;
+}
+
+/* The Profile Card */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the button sticks to the bottom corners */
+}
+
+/* The Invisible Table */
+.invisible-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    text-align: center;
+}
+
+.invisible-table td {
+    padding: 0;
+    border: none;
+}
+
+/* Image styling */
+.profile-img {
+    width: 100%;
+    display: block;
+}
+
+/* Text styling */
+h1 {
+    font-size: 24px;
+    margin: 15px 0 5px 0;
+}
+
+.description {
+    color: grey;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Social icons layout */
+.social-icons {
+    margin: 15px 0;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    margin: 0 8px;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+/* Contact Button */
+.contact-btn {
+    border: none;
+    outline: 0;
+    display: block;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #333;
+}
